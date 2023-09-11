@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Ohio Font';
+    src: url('../fonts/ohio_2/Ohio Font.ttf'); 
+}
+
+body {
+    background-color: rgb(29, 29, 28);
+}
+
+header h2 {
+    text-align: left;
+}
+
+h2, h3, p {
+    color: #fff;
+    font-family: 'Ohio Font';
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    text-align: left;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 70px 0
+}
+
+.center p, .center h2{
+    text-align: center;
+    color: #fff;
+}
+
+.rounded {
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.card {
+    background-color: #cf570c;
+    height: 300px;
+    width: 250px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    padding-top: 15px;
+}
+
+.merchan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.merchan img {
+    margin-left: 10px;
+}
+
+.merchan h3 {
+    padding: 0;
+    margin: 0;
+}
+
+#header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#quem_somos {
+    margin-top: 20px;
+}
+
+#contato {
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+    border-radius: 50%;
+}
+
+.rounded#right {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+
+.rounded#left {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(10px);
+    transition: all 1.5s;
+}
+
+.left {
+    transform: translateX(-100%);
+}
+
+.right {
+    transform: translateX(+100%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 1.5s;
+}
+
+#planos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+#clientes{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#clientes img {
+    width: 80px;
+    margin: 10px 5px;
+    border-radius: 50%;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
