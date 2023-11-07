@@ -24,8 +24,8 @@ app.get('/get-access-token', (req, res) => {
             scopes: "read_institutions,write_links,read_consents,write_consents,write_consent_callback,delete_consents",
             widget: {
                 branding: {
-                    company_icon: "img/bravcon_icon.svg",
-                    company_logo: "img/bravcon_icon.svg",
+                    company_icon: "https://raw.githubusercontent.com/GeEuzebio/Bravcon/aec5516f9f2285cfcf6a954ee97db1633032eeca/img/bravcon_icon.svg",
+                    company_logo: "https://raw.githubusercontent.com/GeEuzebio/Bravcon/aec5516f9f2285cfcf6a954ee97db1633032eeca/img/bravcon_icon.svg",
                     company_name: "Bravcon",
                     social_proof: true,
                     company_terms_url: "https://belvo.com/terms-service/",
