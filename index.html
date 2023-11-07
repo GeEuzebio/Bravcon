@@ -1,74 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Bravcon</title>
+    <script rel="preload" src="https://cdn.belvo.io/belvo-widget-1-stable.js" async></script>
+
+    <title>Teste Dashboard</title>
 </head>
+
 <body>
-    <header>
-        <div id="header">
-            <img src="img/bavcon_icon.png" alt="Bravcon" width="120">
-            <div>
-                <h2>BRAVECON</h2>
-                <p>Contabilidade de excelência</p>
-            </div>
-        </div>
-    </header>
-    <div class="center hidden left" id="quem_somos">
-        <h2>Quem somos?</h2>
-        <p>Somos uma empresa com foco na Gestão Empresarial, contabilidade de excelência e evolução do seu negócio.</p>
-        <img src="img/quem_somos.jpg" alt="Quem somos?" width="150" class="rounded" id="right">
-    </div>
-    <div class="center hidden right">
-        <h2>Nossos Serviços</h2>
-        <ul>
-            <li><p>Abertura de Empresa</p></li>
-            <li><p>Desenquadrar MEI</p></li>
-            <li><p>Pessoa Física</p></li>
-            <li><p>CNAES</p></li>
-            <li><p>Anexo Simples</p></li>
-        </ul>
-        <img src="img/nossos_servicos.jpg" alt="Nossos Serviços" width="150" class="rounded" id="left">
-    </div>
-    <div class="merchan hidden right">
-        <img src="img/feedback.png" alt="feedback">
-        <h3>Nossos clientes aprovam e recomendam nossos serviços!</h3>
-    </div>
-    <div class="merchan hidden left">
-        <img src="img/fast.png" alt="agilidade">
-        <h3>Economia de tempo com a nossa agilidade!</h3>
-    </div>
-    <div class="merchan hidden right">
-        <img src="img/money.png" alt="custo beneficio">
-        <h3>Melhor custo benefício do mercado!</h3>
-    </div>
-    <div class="center hidden left">
-        <h2>Alguns de nossos clientes</h2>
-        <div class="hidden right" id="clientes">
-            <img src="img/parceiro_1.jpg" alt="">
-            <img src="img/parceiro_2.jpg" alt="">
-            <img src="img/parceiro_3.jpg" alt="">
-            <img src="img/parceiro_4.jpg" alt="">
-        </div>
-    </div>
-    <div class="center">
-        <h2 class="hidden left">Nossos Planos</h2>
-        <div class="card hidden right">
-            <h3>Plano Basic</h3>
-        </div>
-        <div class="card hidden left">
-            <h3>Plano Classic</h3>
-        </div>
-        <div class="card hidden right">
-            <h3>Plano Premium</h3>
-        </div>
-    </div>
-    <div id="contato">
-        <a href="http://wa.me/message/CTQU3KX2Q772K1"><img src="img/whatsapp.png" alt="Contato" width="50" height="50"></a>
-    </div>
-  </div>
+    <div id="belvo"></div>
+    <script type="text/javascript">
+        function successCallbackFunction(link, institution) {
+            console.log(link);
+            console.log(institution);
+            const institution_link = `https://sandbox.belvo.com/api/accounts/${link}`;
+            console.log(institution_link);
+        }
+
+        function onExitCallbackFunction(data) {
+            console.log(data);
+        }
+
+        function onEventCallbackFunction(data) {
+            console.log(data);
+        }
+
+        // Function to call your server-side to generate the access_token and retrieve the your access token
+        function getAccessToken() {
+            return fetch('/get-access-token', { method: 'GET' })
+                .then(response => response.json())
+                .then((data) => data.access)
+                .catch(error => console.error('Error:', error))
+        }
+
+        function openBelvoWidget(accessToken) {
+            belvoSDK.createWidget(accessToken, {
+                access_mode: "single",
+                country_codes: ["BR"],
+                locale: "pt",
+                callback: (link, institution) => successCallbackFunction(link, institution),
+                onEvent: (data) => onEventCallbackFunction(data),
+                onExit: (data) => onExitCallbackFunction(data)
+            }).build();
+        }
+
+        getAccessToken().then(openBelvoWidget) // Once the access token is retrieved, the widget is started.
+    </script>
 </body>
-<script src="js/script.js"></script>
 </html>
