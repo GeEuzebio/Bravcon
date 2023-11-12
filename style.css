@@ -1,45 +1,47 @@
-body{
+* {
     margin: 0;
     padding: 0;
-    background-color: #292928;
-}
-
-form {
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: 1px solid #CF570C;
-    text-align: center;
-}
-
-label {
     color: #CF570C;
-    font-size: 14pt;
-    padding: 5px 0;
 }
 
-input {
-    border: none;
+body {
+    background-color: rgba(41, 41, 40, 0.98);
+}
+
+a {
     border-radius: 5px;
 }
 
-.button-brav {
+a:active {
+    width: 100%;
+    padding: 10px 5px;
     background-color: #CF570C;
     color: #fff;
-    font-size: 14pt;
-    border: none;
     border-radius: 5px;
-    padding: 5px 10px;
-    margin-top: 10px;
 }
 
-#sidebar {
-    width: 200px;
-    height: 100vh;
-    position: fixed;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.nav-link {
+    color: #CF570C;
+}
+
+.nav-link:active{
+    color: #fff;
+}
+
+.btn {
+    background-color: #CF570C;
+    color: #fff;
+}
+
+.navbar-brand {
+    color:#CF570C;
+}
+
+.navbar {
+    background-color: rgba(41, 41, 40, 1);
+}
+
+.navbar-toggler, .navbar-toggler.navbar-toggler-icon{
+    background-color: #CF570C;
+    color: transparent;
 }
