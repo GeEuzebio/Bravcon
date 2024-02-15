@@ -18,8 +18,12 @@ const connection = mysql.createConnection({
     database: 'bravcon'
 })
 
+router.get('/', (req, res) => {
+    res.sendFile('C:/Users/georg/OneDrive/Área de Trabalho/Bravecon/home.html');
+});
+
 router.get('/login', (req, res) => {
-    res.sendFile('C:/Users/georg/OneDrive/Área de Trabalho/Bravcon/login.html');
+    res.sendFile('C:/Users/georg/OneDrive/Área de Trabalho/Bravecon/login.html');
 });
 
 router.post('/login', (req, res) => {
@@ -32,7 +36,7 @@ router.post('/login', (req, res) => {
 });
 
 router.get('/register', (req, res) => {
-    res.sendFile('C:/Users/georg/OneDrive/Área de Trabalho/Bravcon/register.html');
+    res.sendFile('C:/Users/georg/OneDrive/Área de Trabalho/Bravecon/register.html');
 });
 
 router.post('/register', (req, res) => {
@@ -43,6 +47,10 @@ router.post('/register', (req, res) => {
        return res.redirect('/register');
     }
     res.redirect('/login');
+});
+
+router.get('/quem-somos', (req, res) => {
+    res.sendFile('C:/Users/georg/OneDrive/Área de Trabalho/Bravecon/quemsomos.html')
 });
 
 module.exports = router

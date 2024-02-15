@@ -5,7 +5,7 @@ const mysql = require("mysql2");
 const path = require("path");
 
 router.get('/', (req, res) => {
-    res.sendFile('C:/Users/georg/OneDrive/Área de Trabalho/Bravcon/index.html');
+    res.sendFile('C:/Users/georg/OneDrive/Área de Trabalho/Bravecon/home.html');
 });
 
 router.get('/get-access-token', (req, res) => {

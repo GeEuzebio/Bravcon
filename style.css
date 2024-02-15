@@ -1,7 +1,6 @@
 * {
-    margin: 0;
     padding: 0;
-    color: #CF570C;
+    color: #fff;
 }
 
 body {
@@ -9,6 +8,8 @@ body {
 }
 
 a {
+    text-decoration: none;
+    color: #fff;
     border-radius: 5px;
 }
 
@@ -21,11 +22,11 @@ a:active {
 }
 
 .nav-link {
-    color: #CF570C;
+    color: #fff;
 }
 
-.nav-link:active{
-    color: #fff;
+.nav-link:hover{
+    color: #CF570C;
 }
 
 .btn {
@@ -44,4 +45,17 @@ a:active {
 .navbar-toggler, .navbar-toggler.navbar-toggler-icon{
     background-color: #CF570C;
     color: transparent;
+}
+
+@media screen and (max-width: 450px) {
+    #bravcon{
+        display:none;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    #bravcon{
+        display: flex; 
+        justify-content: space-around
+    }
 }
