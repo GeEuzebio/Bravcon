@@ -47,7 +47,6 @@ a:active {
     color: transparent;
 }
 
-/* ------------ Aplicando a transição --------------*/
 .hidden{
     opacity: 0;
     filter: blur(15px); 
@@ -61,7 +60,7 @@ a:active {
     transform: translateX(0);
     transition: all 2s;
 }
-/* ------------ Fim --------------*/
+
 
 @media screen and (max-width: 450px) {
     #bravcon{
