@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    color: #fff;
+}
+
+body {
+    background-color: rgba(41, 41, 40, 0.98);
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+a:active {
+    width: 100%;
+    padding: 10px 5px;
+    background-color: #CF570C;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.nav-link:hover{
+    color: #CF570C;
+}
+
+.btn {
+    background-color: #CF570C;
+    color: #fff;
+}
+
+.navbar-brand {
+    color:#CF570C;
+}
+
+.navbar {
+    background-color: rgba(41, 41, 40, 1);
+}
+
+.navbar-toggler, .navbar-toggler.navbar-toggler-icon{
+    background-color: #CF570C;
+    color: transparent;
+}
+
+/* ------------ Aplicando a transição --------------*/
+.hidden{
+    opacity: 0;
+    filter: blur(15px); 
+    transform: translateX(-100%); 
+    transition: all 3s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 2s;
+}
+/* ------------ Fim --------------*/
+
+@media screen and (max-width: 450px) {
+    #bravcon{
+        display:none;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    #bravcon{
+        display: flex; 
+        justify-content: space-around
+    }
+}
